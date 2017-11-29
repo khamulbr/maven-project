@@ -2,8 +2,8 @@ pipeline {
 	agent any
 
 	parameters {
-		sting(name: 'tomcat_staging', defaultValue: '52.90.200.21', description: 'Staging Server')
-		sting(name: 'tomcat_prod', defaultValue: '54.175.121.177', description: 'Production Server')
+		string(name: 'tomcat_staging', defaultValue: '52.90.200.21', description: 'Staging Server')
+		string(name: 'tomcat_prod', defaultValue: '54.175.121.177', description: 'Production Server')
 	}
 
 	triggers{
@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-
+ 
         stage ('Deployments'){
             parallel{
                 stage ('Deploy to Staging'){
